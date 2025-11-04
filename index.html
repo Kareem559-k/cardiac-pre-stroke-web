@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="web.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <!-- Plotly -->
   <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
 </head>
 <body>
@@ -19,6 +18,7 @@
       <h2 class="logo">CARDIAC PRE-STROKE</h2>
       <nav>
         <a href="#home">Home</a>
+        <a href="#problem">Problem</a>
         <a href="#summary">Summary</a>
         <a href="#methods">Methods</a>
         <a href="#results">Results</a>
@@ -34,24 +34,42 @@
   <section id="home" class="section home">
     <div class="content-box">
       <h1>CARDIAC PRE-STROKE</h1>
-      <h3>AI-Based ECG Prediction System</h3>
-      <p>An advanced AI-driven cardiac system that predicts early stroke and heart attack risks using high-resolution ECG micro-dynamic analysis.</p>
+      <h3>AI-Synchronized ECG System for Early Stroke Risk Prediction in CAD Patients</h3>
+      <p><strong>Authors:</strong> Kareem Ismail – Zeyad Ayman</p>
+      <p>Cardiovascular diseases are the leading cause of death globally. The project aims to develop an AI-based model that detects micro-dynamic ECG variations to predict early risks of heart attack and stroke in coronary artery disease (CAD) patients.</p>
       <a class="try-btn" href="https://qvkbkgyg3nuqkkcdvsqenm.streamlit.app/" target="_blank">🚀 Try the App</a>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem" class="section">
+    <div class="text-box">
+      <h2>⚠️ Problem Statement</h2>
+      <p class="glow-on-hover">
+        Cardiovascular diseases cause nearly one-third of global deaths every year. Despite advances in medical technology, early detection of coronary artery disease (CAD) and stroke remains challenging.
+      </p>
+      <p class="glow-on-hover">
+        Traditional ECG analysis only detects visible waveform changes after disease progression. However, tiny electrical micro-dynamics occur much earlier — invisible to the human eye or standard tools.
+      </p>
+      <p class="glow-on-hover">
+        Missing these subtle signals leads to delayed diagnosis and preventable cardiac events. Thus, there is an urgent need for an AI system capable of detecting micro-level ECG variations, predicting early risks, and supporting real-time monitoring through wearable or hospital-based devices.
+      </p>
     </div>
   </section>
 
   <!-- SUMMARY -->
   <section id="summary" class="section">
     <div class="text-box">
-      <h2>💡 Project Summary</h2>
+      <h2>🧠 Project Summary</h2>
       <p class="glow-on-hover">
-        The <strong>CARDIAC PRE-STROKE</strong> project aims to develop an AI system capable of identifying early cardiac and stroke risks by analyzing subtle micro-dynamic changes in ECG signals.
+        This project introduces an AI-powered system designed to detect the earliest invisible ECG variations that indicate risks of heart attack and stroke.
+        Unlike traditional models that focus on visible heart rate or rhythm changes, our system analyzes micro-dynamic patterns hidden within each heartbeat.
       </p>
       <p class="glow-on-hover">
-        Traditional diagnostic systems focus on visual ECG features, while our approach targets micro-level variations invisible to the human eye, providing a more sensitive and reliable early detection.
+        By combining deep learning (CNN + LSTM) with advanced ECG signal processing, the model achieves over 90% accuracy in predicting pre-stroke and coronary artery disease conditions.
       </p>
       <p class="glow-on-hover">
-        Using hybrid deep learning models (CNN + LSTM), the system interprets spatial and temporal signal dynamics to classify patients as normal or high-risk with an accuracy exceeding 90%.
+        This innovation represents a major step toward smart, preventive cardiac care — giving doctors the ability to detect danger before symptoms appear, potentially saving thousands of lives through early intervention.
       </p>
     </div>
   </section>
@@ -59,13 +77,13 @@
   <!-- METHODS -->
   <section id="methods" class="section">
     <div class="text-box">
-      <h2>🧠 Methods</h2>
+      <h2>⚙️ Methods</h2>
       <ul>
-        <li class="glow-on-hover">ECG data collected from multiple medical datasets including healthy and pre-stroke subjects.</li>
-        <li class="glow-on-hover">Signal preprocessing with adaptive noise filtering for high clarity.</li>
-        <li class="glow-on-hover">Micro-dynamic feature extraction (min, max, SD, RR intervals) between consecutive heartbeats.</li>
-        <li class="glow-on-hover">A CNN-LSTM hybrid model trained to detect subtle ECG anomalies.</li>
-        <li class="glow-on-hover">Built Streamlit web prototype for real-time testing and visualization.</li>
+        <li class="glow-on-hover"><strong>Data Collection:</strong> ECG data were gathered from accurate databases (e.g., PhysioNet) including both healthy and pre-stroke patients.</li>
+        <li class="glow-on-hover"><strong>Preprocessing:</strong> Missing values handled via imputation; features normalized to unify signal scales.</li>
+        <li class="glow-on-hover"><strong>Feature Extraction:</strong> Micro-dynamics analyzed — including standard deviation, maximum, and minimum variations — to represent hidden cardiac patterns.</li>
+        <li class="glow-on-hover"><strong>Model Development:</strong> Hybrid architecture combining CNN (spatial features) and LSTM (temporal patterns); achieved ≈90% accuracy on unseen data.</li>
+        <li class="glow-on-hover"><strong>Prototype:</strong> Streamlit-based web app allowing ECG file upload (HEA, DAT, etc.) and instant stroke risk prediction.</li>
       </ul>
     </div>
   </section>
@@ -73,11 +91,14 @@
   <!-- RESULTS -->
   <section id="results" class="section">
     <div class="text-box">
-      <h2>📊 Results (Interactive)</h2>
-      <p class="glow-on-hover">
-        The proposed model outperformed existing systems with higher accuracy and stability under noisy conditions.  
-        Interactive graphs below visualize model performance and ECG component impacts.
-      </p>
+      <h2>📊 Results</h2>
+      <ul>
+        <li class="glow-on-hover">The QRS complex had the highest diagnostic importance (~60%), followed by P-wave and T-wave.</li>
+        <li class="glow-on-hover">Accuracy improved from 78% to 90% after applying micro-dynamic analysis.</li>
+        <li class="glow-on-hover">Compared with other studies (82%, 86%), this model achieved 90%, showing superior precision.</li>
+        <li class="glow-on-hover">An inverse relation was found between blood flow and ST-segment elevation, confirming physiological behavior.</li>
+      </ul>
+      <p class="glow-on-hover"><strong>Conclusion:</strong> The model successfully detects early cardiac abnormalities, surpassing previous works in accuracy and reliability.</p>
 
       <div class="chart-grid">
         <div id="chart-accuracy" class="plot-card"></div>
@@ -93,10 +114,11 @@
     <div class="text-box">
       <h2>🚀 Future Work</h2>
       <ul>
-        <li class="glow-on-hover">Integrate wearable ECG devices for continuous monitoring.</li>
-        <li class="glow-on-hover">Expand datasets from hospitals for improved model generalization.</li>
-        <li class="glow-on-hover">Add artery diameter and blood flow estimation for better accuracy.</li>
-        <li class="glow-on-hover">Develop a cloud-based ECG analysis dashboard for clinicians.</li>
+        <li class="glow-on-hover">Expand datasets from multiple hospitals for broader generalization.</li>
+        <li class="glow-on-hover">Integrate with wearable ECG devices for continuous monitoring.</li>
+        <li class="glow-on-hover">Conduct clinical validation with real patient data.</li>
+        <li class="glow-on-hover">Develop a cloud platform for real-time ECG uploading and AI reporting.</li>
+        <li class="glow-on-hover">Implement personalized AI learning adapting to each user’s heart pattern.</li>
       </ul>
     </div>
   </section>
@@ -104,8 +126,8 @@
   <!-- DEMO -->
   <section id="demo" class="section">
     <div class="text-box" style="text-align:center;">
-      <h2>🎬 Prototype Demo</h2>
-      <p class="glow-on-hover">Real-time demonstration of the AI model analyzing ECG input.</p>
+      <h2>💻 Prototype Demo</h2>
+      <p class="glow-on-hover">The AI system analyzes ECG signals and predicts pre-stroke risk in real time.</p>
       <video width="80%" controls style="border-radius:15px; margin-top:20px; box-shadow:0 0 15px rgba(0,229,255,0.4);">
         <source src="2025-11-04 12-11-45.mkv" type="video/mp4">
         Your browser does not support the video tag.
@@ -120,9 +142,14 @@
   <section id="references" class="section">
     <div class="text-box">
       <h2>📚 References</h2>
-      <p class="glow-on-hover">Kany, S., Friedman, S., Al-Alusi, M. (2025). Electrocardiogram-Based AI to Identify Coronary Artery Disease. JACC Adv. 4(9).</p>
-      <p class="glow-on-hover">Varaganti, S., Manisha, R. L. (2024). From Waves to Diagnoses: Decoding Electrocardiogram for Improved Cardiac Care.</p>
-      <p class="glow-on-hover">Yang, B., Jia, Z. (2024). Diagnostic Value of Nocturnal Trend Changes in Dynamic ECG. BMC Cardiovasc Disord, 24(561).</p>
+      <ul>
+        <li class="glow-on-hover">Kany, S. et al. (2025). Electrocardiogram-Based AI to Identify CAD. JACC Adv.</li>
+        <li class="glow-on-hover">Shah, A., & Goyal, A. (2023). ECG-Based Heart Disease Prediction Using Deep Learning. JCDD.</li>
+        <li class="glow-on-hover">Varaganti, S. et al. (2024). Decoding ECG for Improved Cardiac Care. AMHS.</li>
+        <li class="glow-on-hover">Yang, B., & Jia, Z. (2024). Diagnostic Value of Dynamic ECG Changes in CAD. BMC Cardiovasc Disord.</li>
+        <li class="glow-on-hover">Paneitz, D. & Lawton, J. (2024). Management of Coronary Artery Disease. Springer.</li>
+        <li class="glow-on-hover">Weinhaus, A. (2024). Anatomy of the Human Heart. Springer.</li>
+      </ul>
     </div>
   </section>
 
