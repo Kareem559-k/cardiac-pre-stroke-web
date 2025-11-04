@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CARDIAC PRE-STROKE</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="web.css" />
   <style>
     /* ===== Typewriter Animation ===== */
     .typewriter {
@@ -146,27 +146,8 @@
   <!-- ===== BACK TO TOP BUTTON ===== -->
   <button id="backToTop">↑</button>
 
-  <!-- ===== SCRIPTS ===== -->
-  <script>
-    // Scroll animation for sections
-    const sections = document.querySelectorAll('.creative-section');
-    const showSection = () => {
-      sections.forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) sec.classList.add('visible');
-      });
-    };
-    window.addEventListener('scroll', showSection);
-    showSection();
-
-    // Back to top button logic
-    const topButton = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) topButton.style.display = "block";
-      else topButton.style.display = "none";
-    });
-    topButton.addEventListener("click", () => window.scrollTo({top: 0, behavior: "smooth"}));
-  </script>
+  <!-- ===== JS LINK ===== -->
+  <script src="web.js"></script>
 
 </body>
 </html>
