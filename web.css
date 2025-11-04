@@ -159,3 +159,62 @@ footer{
   .content-box{ padding:26px }
   .content-box h1{ font-size:2rem }
 }
+/* ===== TEAM / CONTACT SECTION ===== */
+.team-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.member-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0,229,255,0.5);
+}
+
+.member-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00e5ff;
+  box-shadow: 0 0 15px rgba(0,229,255,0.4);
+  transition: transform 0.3s;
+}
+
+.member-card img:hover {
+  transform: scale(1.08);
+}
+
+.member-card h3 {
+  margin: 15px 0 5px;
+  color: #00e5ff;
+  font-weight: 600;
+}
+
+.member-card .role {
+  color: #d0d0d0;
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+.email-link {
+  color: #81d4fa;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
