@@ -159,7 +159,7 @@ footer{
   .content-box{ padding:26px }
   .content-box h1{ font-size:2rem }
 }
-/* ===== TEAM / CONTACT SECTION ===== */
+/* ===== TEAM SECTION (Circular Style) ===== */
 .team-grid {
   display: flex;
   justify-content: center;
@@ -169,52 +169,59 @@ footer{
 }
 
 .member-card {
-  background: rgba(255,255,255,0.05);
-  padding: 20px;
+  background: rgba(255,255,255,0.04);
+  padding: 18px;
   border-radius: 15px;
-  width: 250px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0,229,255,0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(0,229,255,0.4);
+}
+
+.member-card .photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .member-card img {
-  width: 120px;
-  height: 120px;
+  width: 95px;
+  height: 95px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #00e5ff;
-  box-shadow: 0 0 15px rgba(0,229,255,0.4);
-  transition: transform 0.3s;
+  border: 2.5px solid #00e5ff;
+  box-shadow: 0 0 12px rgba(0,229,255,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .member-card img:hover {
-  transform: scale(1.08);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0,229,255,0.6);
 }
 
 .member-card h3 {
-  margin: 15px 0 5px;
+  margin: 12px 0 6px;
   color: #00e5ff;
   font-weight: 600;
+  font-size: 1.05em;
 }
 
 .member-card .role {
-  color: #d0d0d0;
-  font-size: 0.95em;
-  margin-bottom: 10px;
+  color: #cccccc;
+  font-size: 0.9em;
+  margin-bottom: 8px;
 }
 
 .email-link {
   color: #81d4fa;
   text-decoration: none;
-  font-size: 0.9em;
+  font-size: 0.88em;
 }
 
 .email-link:hover {
   text-decoration: underline;
 }
-
