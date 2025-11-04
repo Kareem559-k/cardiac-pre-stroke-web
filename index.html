@@ -5,149 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CARDIAC PRE-STROKE</title>
   <link rel="stylesheet" href="web.css" />
-  <style>
-    /* ===== Typewriter Animation ===== */
-    .typewriter {
-      overflow: hidden;
-      border-right: .15em solid #00e5ff;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: .05em;
-      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #00e5ff }
-    }
-
-    /* ===== Back to Top Button ===== */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #00e5ff;
-      color: #1e1e1e;
-      border: none;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      font-size: 1.4em;
-      cursor: pointer;
-      display: none;
-      box-shadow: 0 0 10px rgba(0,229,255,0.7);
-      z-index: 1000;
-      transition: background 0.3s ease;
-    }
-
-    #backToTop:hover {
-      background: #00b8cc;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="navbar">
-      <img src="logo.png" alt="Project Logo" style="width:60px; vertical-align:middle; border-radius:10px; margin-right:10px;">
-      <a href="#home">Home</a>
-      <a href="#summary">Summary</a>
-      <a href="#methods">Methods</a>
-      <a href="#results">Results</a>
-      <a href="#future">Future Work</a>
-      <a href="#demo">Demo</a>
-      <a href="#references">References</a>
-      <a href="#contact">Contact</a>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <h2 class="logo">CARDIAC PRE-STROKE</h2>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#summary">Summary</a>
+        <a href="#methods">Methods</a>
+        <a href="#results">Results</a>
+        <a href="#future">Future Work</a>
+        <a href="#demo">Demo</a>
+        <a href="#references">References</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <!-- ===== HOME SECTION ===== -->
-  <section id="home" class="creative-section visible" style="text-align:center;">
-    <h1 class="typewriter" style="color:#00e5ff; font-size:2.8em;">CARDIAC PRE-STROKE</h1>
-    <h2 style="color:#b2ebf2;">AI-based ECG Prediction System</h2>
-    <p style="font-size:1.3em; margin-top:20px;">By: Kareem Ismail & Zeyad Ayman</p>
-    <p style="max-width:700px; margin:20px auto;">An advanced AI-driven cardiac system that predicts early stroke and heart attack risks using high-resolution ECG micro-dynamic analysis.</p>
+  <!-- ===== HOME ===== -->
+  <section id="home" class="section home">
+    <div class="content-box">
+      <h1>AI-Based ECG Prediction System</h1>
+      <p>An advanced machine learning approach for early detection of stroke and cardiac risks through ECG micro-dynamic analysis.</p>
+      <a class="try-btn" href="https://qvkbkgyg3nuqkkcdvsqenm.streamlit.app/" target="_blank">🚀 Try the App</a>
+    </div>
   </section>
 
-  <!-- ===== SUMMARY SECTION ===== -->
-  <section id="summary" class="creative-section">
-    <h1>Summary of the Idea</h1>
-    <p>Cardiovascular diseases remain the leading cause of global deaths. This project aims to develop an AI system capable of detecting invisible micro-dynamic changes in ECG signals that can indicate early stages of coronary artery disease and potential stroke risks.</p>
-    <p>Unlike traditional ECG-based diagnostics that rely on visible waveform features, our model focuses on deep micro-level analysis through advanced signal processing and hybrid deep learning architectures (CNN + LSTM).</p>
+  <!-- ===== SUMMARY ===== -->
+  <section id="summary" class="section">
+    <div class="text-box">
+      <h2>Summary</h2>
+      <p>Cardiovascular diseases remain the leading cause of death worldwide. This project aims to develop an AI system capable of detecting invisible micro-dynamic ECG changes that can indicate early coronary artery disease and pre-stroke risk.</p>
+      <p>The system leverages advanced deep learning architectures (CNN + LSTM) to detect subtle waveform changes that traditional analysis methods might overlook.</p>
+    </div>
   </section>
 
-  <!-- ===== METHODS SECTION ===== -->
-  <section id="methods" class="creative-section">
-    <h1>Procedures and Methods</h1>
-    <p>1️⃣ ECG signals were collected from multiple datasets, including healthy and pre-stroke patients.</p>
-    <p>2️⃣ Signal preprocessing was performed with adaptive noise filtering to ensure clarity and quality.</p>
-    <p>3️⃣ Micro-dynamic feature extraction captured subtle variations between heartbeats (SD, max, min values).</p>
-    <p>4️⃣ A hybrid CNN-LSTM model was trained to detect early pre-stroke risk patterns, achieving up to <strong>90% accuracy</strong>.</p>
-    <p>5️⃣ A prototype Streamlit app allows ECG upload and automatic prediction in real-time.</p>
+  <!-- ===== METHODS ===== -->
+  <section id="methods" class="section">
+    <div class="text-box">
+      <h2>Methods</h2>
+      <ul>
+        <li>Data collected from multiple clinical ECG datasets.</li>
+        <li>Signal preprocessing using adaptive filtering for noise reduction.</li>
+        <li>Micro-dynamic features extracted from inter-beat variability.</li>
+        <li>Hybrid CNN-LSTM model trained for early pre-stroke pattern detection.</li>
+        <li>Achieved prediction accuracy up to <strong>90%</strong>.</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- ===== RESULTS SECTION ===== -->
-  <section id="results" class="creative-section">
-    <h1>Results and Data Analysis</h1>
-    <p>✅ The model achieved 90% accuracy compared to 82–86% in previous studies.</p>
-    <p>✅ The QRS Complex was identified as the most influential ECG component (60%) in early diagnosis.</p>
-    <p>✅ Integration of micro-dynamic analysis improved diagnostic precision and stability under noisy data conditions.</p>
-    <p>These findings show that micro-level ECG analysis is a strong predictor of pre-stroke risk and can significantly enhance early cardiac care.</p>
+  <!-- ===== RESULTS ===== -->
+  <section id="results" class="section">
+    <div class="text-box">
+      <h2>Results</h2>
+      <p>✅ Model accuracy: <strong>90%</strong> — outperforming prior ECG-based stroke predictors.</p>
+      <p>✅ Identified QRS complex as the key predictive ECG feature (60% influence).</p>
+      <p>✅ Enhanced stability under noisy ECG inputs.</p>
+    </div>
   </section>
 
-  <!-- ===== FUTURE WORK SECTION ===== -->
-  <section id="future" class="creative-section">
-    <h1>Future Work</h1>
-    <ul>
-      <li>Integrating real-time wearable ECG monitoring devices.</li>
-      <li>Expanding datasets from hospitals for better generalization.</li>
-      <li>Adding blood flow and artery diameter estimation for higher prediction accuracy.</li>
-      <li>Developing a cloud-based platform for ECG uploading and instant AI-based reporting.</li>
-    </ul>
+  <!-- ===== FUTURE WORK ===== -->
+  <section id="future" class="section">
+    <div class="text-box">
+      <h2>Future Work</h2>
+      <ul>
+        <li>Integrate wearable real-time ECG devices.</li>
+        <li>Expand clinical dataset coverage for model generalization.</li>
+        <li>Include artery diameter and blood flow indicators.</li>
+        <li>Develop a web-based dashboard for live predictions.</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- ===== DEMO SECTION ===== -->
-  <section id="demo" class="creative-section" style="text-align:center;">
-    <h1>Prototype Demo</h1>
-    <p>The AI system analyzes ECG files and predicts pre-stroke risk in real-time.</p>
-    <video width="80%" controls style="border-radius:15px; margin-top:15px;">
-      <source src="demo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <!-- ===== PROTOTYPE DEMO ===== -->
+  <section id="demo" class="section">
+    <div class="text-box" style="text-align:center;">
+      <h2>Prototype Demo</h2>
+      <p>The AI system analyzes ECG signals and predicts pre-stroke risk in real-time.</p>
+
+      <video width="80%" controls style="border-radius:15px; margin-top:20px; box-shadow:0 0 15px rgba(0, 229, 255, 0.4);">
+        <source src="2025-11-04 12-11-45.mkv" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <p style="margin-top:15px; font-size:0.9em; color:#ccc;">
+        If the video doesn't play, <a href="2025-11-04 12-11-45.mkv" download>click here to download it</a>.
+      </p>
+    </div>
   </section>
 
-  <!-- ===== REFERENCES SECTION ===== -->
-  <section id="references" class="creative-section">
-    <h1>References</h1>
-    <p>Kany, S., Friedman, S., Al-Alusi, M. (2025). <em>Electrocardiogram-Based Artificial Intelligence to Identify Coronary Artery Disease</em>. JACC Adv. 4(9).</p>
-    <p>Varaganti, S., Manisha, R. L. (2024). <em>From Waves to Diagnoses: Decoding Electrocardiogram for Improved Cardiac Care</em>.</p>
-    <p>Yang, B., Jia, Z. (2024). <em>Diagnostic value of nocturnal trend changes in dynamic ECG for coronary heart disease</em>. BMC Cardiovasc Disord, 24(561).</p>
+  <!-- ===== REFERENCES ===== -->
+  <section id="references" class="section">
+    <div class="text-box">
+      <h2>References</h2>
+      <p>Kany, S., Friedman, S., Al-Alusi, M. (2025). <em>Electrocardiogram-Based Artificial Intelligence to Identify Coronary Artery Disease.</em> JACC Adv. 4(9).</p>
+      <p>Varaganti, S., Manisha, R. L. (2024). <em>From Waves to Diagnoses: Decoding Electrocardiogram for Improved Cardiac Care.</em></p>
+      <p>Yang, B., Jia, Z. (2024). <em>Diagnostic Value of Nocturnal Trend Changes in Dynamic ECG for Coronary Heart Disease.</em> BMC Cardiovasc Disord, 24(561).</p>
+    </div>
   </section>
 
-  <!-- ===== CONTACT SECTION ===== -->
-  <section id="contact" class="creative-section">
-    <h1>Contact</h1>
-    <p>For inquiries or collaboration, feel free to reach out:</p>
-    <p>Email: <a href="mailto:kareemismail@gmail.com">kareemismail@gmail.com</a></p>
-    <p>Team: Kareem Ismail & Zeyad Ayman</p>
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section">
+    <div class="text-box">
+      <h2>Contact</h2>
+      <p>For inquiries or collaborations, please reach out:</p>
+      <p><strong>Email:</strong> <a href="mailto:kareemismail@gmail.com">kareemismail@gmail.com</a></p>
+      <p><strong>Team:</strong> Kareem Ismail & Zeyad Ayman</p>
+    </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p style="text-align:center;">💙 Powered by AI & Biomedical Engineering | 2025</p>
+    <p>💙 Powered by AI & Biomedical Engineering | 2025</p>
   </footer>
-
-  <!-- ===== BACK TO TOP BUTTON ===== -->
-  <button id="backToTop">↑</button>
-
-  <!-- ===== JS LINK ===== -->
-  <script src="web.js"></script>
 
 </body>
 </html>
