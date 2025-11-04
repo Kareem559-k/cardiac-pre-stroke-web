@@ -1,0 +1,144 @@
+/* ===== Global Styles ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #141414, #1f1f1f, #232323, #1a1a1a);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #e0e0e0;
+  scroll-behavior: smooth;
+}
+
+/* ===== Gradient Animation ===== */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Header & Navbar ===== */
+header {
+  background-color: #222;
+  padding: 15px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar a:hover {
+  color: #00e5ff;
+  transform: scale(1.1);
+}
+
+/* ===== Section Styling ===== */
+.creative-section {
+  padding: 40px;
+  background-color: rgba(42, 42, 42, 0.9);
+  border-radius: 15px;
+  margin: 50px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 1000px;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.creative-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.creative-section h1 {
+  color: #00e5ff;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.creative-section p, 
+.creative-section ul {
+  font-size: 1.15em;
+  line-height: 1.6;
+}
+
+/* ===== Lists ===== */
+.creative-section ul {
+  list-style-type: "💠 ";
+  padding-left: 30px;
+}
+
+/* ===== Links ===== */
+a {
+  color: #81d4fa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Contact Section ===== */
+#contact {
+  text-align: center;
+  background: rgba(42, 42, 42, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 40px 20px;
+}
+
+#contact h1 {
+  font-size: 2.3rem;
+  color: #00e5ff;
+  font-weight: 700;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  color: #d0d0d0;
+  margin: 8px 0;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .creative-section {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .navbar a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  #home h1 {
+    font-size: 2em;
+  }
+}
