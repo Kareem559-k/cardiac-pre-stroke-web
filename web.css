@@ -1,34 +1,80 @@
 /* General Reset */
-body { margin: 0; background-color: #020a10; color: #fff; font-family: 'Poppins', sans-serif; }
-.section { padding: 60px 20px; display: flex; justify-content: center; }
-.text-box { width: 100%; max-width: 1000px; }
-h2 { color: #00e5ff; border-bottom: 2px solid #00e5ff; display: inline-block; padding-bottom: 5px; }
+body { margin: 0; background-color: #020a10; color: #fff; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+a { text-decoration: none; color: inherit; }
 
-/* Grid Layouts for Methods */
+/* Navbar */
+.navbar { position: fixed; top: 0; width: 100%; background: rgba(2, 10, 16, 0.95); z-index: 1000; padding: 15px 0; border-bottom: 1px solid #004d40; }
+.nav-container { width: 90%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { color: #00e5ff; margin: 0; font-size: 1.5rem; text-shadow: 0 0 10px rgba(0,229,255,0.7); }
+nav a { margin-left: 20px; color: #e0f7fa; font-size: 0.9rem; transition: 0.3s; }
+nav a:hover { color: #00e5ff; text-shadow: 0 0 5px #00e5ff; }
+
+/* Sections */
+.section { padding: 80px 20px; display: flex; justify-content: center; min-height: 80vh; align-items: center; opacity: 0; transform: translateY(20px); transition: 1s; }
+.section.visible { opacity: 1; transform: translateY(0); }
+.text-box { width: 100%; max-width: 1100px; }
+h2 { color: #00e5ff; border-bottom: 2px solid #00e5ff; display: inline-block; padding-bottom: 5px; margin-bottom: 30px; }
+
+/* Home Section */
+.home { background: radial-gradient(circle at center, #051821 0%, #020a10 70%); text-align: center; }
+.content-box h1 { font-size: 3.5rem; margin-bottom: 10px; color: #fff; }
+.content-box h3 { color: #80deea; font-weight: 300; }
+.abstract-box { background: rgba(0, 229, 255, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #00e5ff; text-align: left; max-width: 800px; margin: 20px auto; }
+.try-btn { background: #00e5ff; color: #000; padding: 12px 30px; border-radius: 25px; font-weight: bold; display: inline-block; margin-top: 20px; transition: 0.3s; }
+.try-btn:hover { background: #fff; box-shadow: 0 0 15px #00e5ff; }
+
+/* Grid Layouts (Problem, Future) */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border: 1px solid rgba(0,229,255,0.2); }
+.card h3 { color: #81d4fa; margin-top: 0; }
+.glow-on-hover:hover { box-shadow: 0 0 20px rgba(0,229,255,0.3); transform: scale(1.02); transition: 0.3s; }
+
+/* Background Section */
+.bg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.bg-card { background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 10px; border-left: 3px solid #ff5252; }
+.bg-card h3 { color: #ff8a80; margin-top: 0; }
+
+/* Engineering Goals */
+.goals-list li { margin-bottom: 15px; padding: 15px; background: rgba(0, 229, 255, 0.05); border-radius: 8px; list-style: none; border-left: 4px solid #00e5ff; }
+.goal-intro { font-style: italic; color: #b0bec5; margin-bottom: 20px; }
+
+/* Methods Layout */
 .methods-top-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
 .method-step { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border: 1px solid #333; }
 .method-step h3 { color: #81d4fa; margin-top: 0; }
-
-/* Flowchart Styling */
 .flowchart-container { background: rgba(0,0,0,0.3); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 1px dashed #444; }
 .flow-steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; font-weight: bold; }
 .flow-steps span { background: #003c48; padding: 8px 15px; border-radius: 20px; border: 1px solid #00bcd4; font-size: 0.9em; }
-
-/* Hardware & App Grid */
 .hardware-app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .info-block { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border-left: 3px solid #00e5ff; }
 
-/* Results Stats */
+/* Results Stats & Charts */
 .stats-row { display: flex; justify-content: space-around; margin: 30px 0; }
 .stat-num { color: #00e5ff; font-size: 3em; margin: 0; text-shadow: 0 0 10px rgba(0,229,255,0.5); }
-
-/* Charts Grid */
 .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; margin-top: 30px; }
 .plot-card { background: rgba(10, 20, 30, 0.6); border-radius: 10px; padding: 10px; min-height: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
 
-/* Responsive */
+/* Conclusion Grid */
+.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.con-card { background: rgba(255, 255, 255, 0.07); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); transition: transform 0.3s ease; }
+.con-card:hover { transform: translateY(-5px); border-color: #00e5ff; }
+.con-card h3 { color: #00e5ff; border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding-bottom: 8px; margin-top: 0; }
+
+/* Future Work & Team */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.future-item { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; }
+.team-grid { display: flex; justify-content: center; gap: 40px; margin-top: 30px; }
+.member-card { text-align: center; }
+.photo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #00e5ff; box-shadow: 0 0 15px rgba(0,229,255,0.5); margin-bottom: 10px; }
+.role { color: #aaa; font-style: italic; }
+.email-link { color: #00e5ff; font-weight: bold; }
+
+footer { text-align: center; padding: 20px; background: #000; color: #555; font-size: 0.8rem; }
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .hardware-app-grid { grid-template-columns: 1fr; }
-  .stats-row { flex-direction: column; text-align: center; gap: 20px; }
+  .nav-container { flex-direction: column; }
+  .hardware-app-grid, .conclusion-grid, .stats-row, .grid-2, .team-grid { flex-direction: column; }
   .chart-grid { grid-template-columns: 1fr; }
+  .home h1 { font-size: 2.5rem; }
 }
