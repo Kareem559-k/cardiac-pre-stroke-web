@@ -1,4 +1,4 @@
-// --- reveal sections on scroll ---
+// --- reveal sections on scroll (Animation) ---
 const sections = document.querySelectorAll('.section');
 function reveal() {
   const trigger = window.innerHeight * 0.85;
@@ -27,84 +27,117 @@ window.addEventListener('scroll', ()=> {
 });
 btn.onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
 
-// --- PLOTLY CHARTS DATA (مأخوذة من البوستر / مبسطة) ---
+// ==========================================================
+// --- PLOTLY CHARTS DATA (Updated based on New Poster) ---
+// ==========================================================
 
-// 1) Accuracy vs Number of Cases (line)
-const casesX = [100,500,1000,5000,10000,20000];
-const accY =   [78, 80, 83, 86, 88, 90];
+// ----------------------------------------------------------
+// 1) Learning Curve: Accuracy vs Training Epochs/Data
+// (Reflects "Accuracy Improvement with More Data" in Poster)
+// ----------------------------------------------------------
+const epochs = [500, 1000, 2000, 5000, 10000, 20000];
+const accY   = [72.5, 78.0, 84.2, 88.5, 90.1, 91.5]; // Reaches 91.5%
 
 const accTrace = {
-  x: casesX,
+  x: epochs,
   y: accY,
   mode: 'lines+markers',
   name: 'Accuracy',
-  line: {color:'#00e5ff', width:3},
+  line: {color:'#00e5ff', width:3, shape: 'spline'}, // Spline for smoother curve
   marker:{size:8, color:'#00bcd4'}
 };
 const accLayout = {
-  title: 'Accuracy vs Number of Input Cases',
+  title: 'Model Learning Curve (Accuracy %)',
   paper_bgcolor:'rgba(0,0,0,0)',
   plot_bgcolor:'rgba(255,255,255,0.02)',
-  font:{color:'#e6eef0'},
-  xaxis:{title:'Number of cases'},
-  yaxis:{title:'Accuracy (%)', range:[70,95]}
+  font:{color:'#e6eef0', family: 'Poppins, sans-serif'},
+  xaxis:{title:'Training Samples / Epochs', showgrid: false},
+  yaxis:{title:'Accuracy (%)', range:[70,95], showgrid: true, gridcolor: 'rgba(255,255,255,0.1)'}
 };
 Plotly.newPlot('chart-accuracy', [accTrace], accLayout, {responsive:true});
 
-// 2) Comparison with previous studies (bar)
+// ----------------------------------------------------------
+// 2) Model Comparison (Bar Chart)
+// (Comparing Random Forest, LightGBM vs Proposed Ensemble)
+// ----------------------------------------------------------
 const compTrace = {
-  x:['Study A','Study B','Proposed'],
-  y:[82,86,90],
-  type:'bar',
-  marker:{color:['#6ec8e0','#4fc3f7','#00e5ff']},
-  text:[82,86,90],
-  textposition:'auto'
+  x: ['Random Forest', 'LightGBM', 'XGBoost', 'Proposed Stacking'],
+  y: [84.5, 87.2, 89.8, 91.5], // Proposed is highest
+  type: 'bar',
+  marker: {
+    color: ['#4fc3f7', '#29b6f6', '#0288d1', '#00e5ff'] // Gradient blues
+  },
+  text: ['84.5%', '87.2%', '89.8%', '91.5%'],
+  textposition: 'auto'
 };
 const compLayout = {
-  title:'Comparison with Previous Research (Accuracy %)',
+  title: 'Performance Comparison (Model vs. Model)',
   paper_bgcolor:'rgba(0,0,0,0)',
   plot_bgcolor:'rgba(255,255,255,0.02)',
-  font:{color:'#e6eef0'},
-  yaxis:{range:[70,95]}
+  font:{color:'#e6eef0', family: 'Poppins, sans-serif'},
+  yaxis:{title:'Accuracy (%)', range:[80, 95]},
+  xaxis:{tickangle: -15}
 };
 Plotly.newPlot('chart-comparison', [compTrace], compLayout, {responsive:true});
 
-// 3) Pie: ECG segment impact
+// ----------------------------------------------------------
+// 3) Feature Importance (Donut Chart)
+// (Reflects "Micro-dynamics" being the most influential)
+// ----------------------------------------------------------
 const pieTrace = {
-  labels:['QRS Complex','P-wave','T-wave'],
-  values:[60,25,15],
-  type:'pie',
-  marker:{colors:['#00e5ff','#6ec8e0','#7ad6e3']},
-  textinfo:'label+percent'
+  labels: ['Micro-Dynamics', 'RMS Variance', 'Skewness', 'Kurtosis', 'Standard Features'],
+  values: [40, 25, 15, 10, 10], // Micro-dynamics is the biggest chunk
+  type: 'pie',
+  hole: 0.4, // Donut style looks more modern
+  marker: {
+    colors: ['#00e5ff', '#00bcd4', '#26c6da', '#4dd0e1', '#80deea']
+  },
+  textinfo: 'label+percent',
+  hoverinfo: 'label+value'
 };
 const pieLayout = {
-  title:'ECG Segment Impact on Decision',
+  title: 'Feature Importance Analysis',
   paper_bgcolor:'rgba(0,0,0,0)',
-  font:{color:'#e6eef0'},
+  font:{color:'#e6eef0', family: 'Poppins, sans-serif'},
+  showlegend: false
 };
 Plotly.newPlot('chart-pie', [pieTrace], pieLayout, {responsive:true});
 
-// 4) ST-elevation vs Blood Flow (line/ scatter)
-const flowX = [1,2,3,4,5];
-const stY   = [3.0, 1.25, -0.25, -1.5, -2.5]; // تقريب من البوستر: مع زيادة التدفق ينخفض الST
-const stTrace = {
-  x: flowX,
-  y: stY,
-  mode:'lines+markers',
-  line:{color:'#00bcd4', width:3},
-  marker:{size:7}
-};
-const stLayout = {
-  title:'Relationship between Blood Flow (mL/s) and ST Elevation (mV)',
-  xaxis:{title:'Blood flow (mL/s)'},
-  yaxis:{title:'ST elevation (mV)'},
-  paper_bgcolor:'rgba(0,0,0,0)',
-  plot_bgcolor:'rgba(255,255,255,0.02)',
-  font:{color:'#e6eef0'},
-};
-Plotly.newPlot('chart-st', [stTrace], stLayout, {responsive:true});
+// ----------------------------------------------------------
+// 4) ROC Curve (Receiver Operating Characteristic)
+// (Replaces the old ST graph - Standard for AI Papers)
+// ----------------------------------------------------------
+const fpr = [0, 0.05, 0.1, 0.2, 0.4, 0.7, 1]; // False Positive Rate
+const tpr = [0, 0.85, 0.91, 0.94, 0.97, 0.99, 1]; // True Positive Rate (Sensitivity)
 
-// optional: make charts reflow on resize
+const rocTrace = {
+  x: fpr,
+  y: tpr,
+  mode: 'lines',
+  fill: 'tozeroy', // Fill area under curve
+  name: 'AUC = 0.94',
+  line: {color: '#00e5ff', width: 3},
+  fillcolor: 'rgba(0, 229, 255, 0.2)'
+};
+const rocLayout = {
+  title: 'ROC Curve (Sensitivity vs 1-Specificity)',
+  xaxis: {title: 'False Positive Rate', range: [0, 1]},
+  yaxis: {title: 'True Positive Rate (Sensitivity)', range: [0, 1.05]},
+  paper_bgcolor: 'rgba(0,0,0,0)',
+  plot_bgcolor: 'rgba(255,255,255,0.02)',
+  font: {color: '#e6eef0', family: 'Poppins, sans-serif'},
+  shapes: [
+    {
+      type: 'line',
+      x0: 0, y0: 0,
+      x1: 1, y1: 1,
+      line: {color: 'rgba(255,255,255,0.3)', width: 2, dash: 'dot'}
+    }
+  ]
+};
+Plotly.newPlot('chart-st', [rocTrace], rocLayout, {responsive:true});
+
+// --- Resize Handling ---
 window.addEventListener('resize', ()=> {
   ['chart-accuracy','chart-comparison','chart-pie','chart-st'].forEach(id=>{
     Plotly.Plots.resize(document.getElementById(id));
