@@ -18,10 +18,9 @@
       <nav>
         <a href="#home">Home</a>
         <a href="#problem">Problem</a>
-        <a href="#background">Background</a> <a href="#goals">Goals</a>
         <a href="#methods">Methods</a>
         <a href="#results">Results</a>
-        <a href="#impact">Impact</a> <a href="#future">Future Work</a>
+        <a href="#future">Future</a>
         <a href="#demo">Demo</a>
       </nav>
     </div>
@@ -33,11 +32,10 @@
       <h3>AI-Synchronized ECG System for Early Stroke Risk Prediction in CAD Patients</h3>
       <p><strong>Authors:</strong> Kareem Ismail – Zeyad Ayman</p>
       
-      <div class="abstract-box" style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; margin-top: 15px;">
+      <div class="abstract-box" style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 12px; margin-top: 20px; border-left: 4px solid #00e5ff;">
         <p><strong>Summary of The Idea:</strong></p>
         <p>This project constitutes a fully integrated AI-driven system capable of extracting highly sensitive micro-dynamic repolarization from ECG records with personalized beat segments. By combining QT variability and rapid instability indices, the system establishes an automated framework for early cardiac-risk detection.</p>
       </div>
-      
       <br>
       <a class="try-btn" href="https://qvkbkgyg3nuqkkcdvsqenm.streamlit.app/" target="_blank">🚀 Try the App</a>
     </div>
@@ -46,111 +44,111 @@
   <section id="problem" class="section">
     <div class="text-box">
       <h2>⚠️ Problem Statement</h2>
-      
-      <p class="glow-on-hover"><strong>Global Burden:</strong> Cardiovascular diseases are a leading cause of death globally. Early detection is critical.</p>
-      
-      <p class="glow-on-hover"><strong>Hidden Early Abnormalities:</strong> A major challenge is that high-risk changes often manifest as "micro-dynamic" variations not visible to the human eye. This means the patient may be approaching a heart attack or stroke invisible to standard clinical tools.</p>
-      
-      <p class="glow-on-hover"><strong>Clinical Limitations:</strong> Raw ECG signals often contain noise and fail to capture "spatial" indoctrination features required for accurate classification.</p>
-    </div>
-  </section>
-
-  <section id="background" class="section">
-    <div class="text-box">
-      <h2>📜 Background of Research</h2>
-      <p>Although previous research has created crucial advances in cardiac vascular disease diagnosis, they exhibit critical limitations:</p>
-      <ul>
-        <li class="glow-on-hover"><strong>1. Population-dependent Issues:</strong> Most research, such as studies on QT interval variability (QTV), examines varied patients using the same databases (Al-Zaiti et al., 2020) or large general populations, without capturing the nuances of individual cardiac patterns.</li>
-        <li class="glow-on-hover"><strong>2. Limited Real-World Applicability:</strong> ECG biometric studies often focus on controlled lab settings or standardized datasets, which fail to account for daily-life monitoring, resulting in low-quality continuous tracking and potentially dangerous oversight of patients' status (Lehmann & Buschek, 2020).</li>
-        <li class="glow-on-hover"><strong>3. Traditional Focusing:</strong> These studies concentrated on detecting the <em>presence or absence</em> of CAD, without providing early assessment based on micro-dynamics variability.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="goals" class="section">
-    <div class="text-box">
-      <h2>🎯 Engineering Goals</h2>
-      <p>The main functionality of this project is designing and generating an advanced AI-driven system that has more capabilities of detecting micro-dynamic variations in ECG signals than any other.</p>
-      <ul>
-        <li class="glow-on-hover"><strong>Advanced AI Detection:</strong> Processing ECG signals (feature, noise filtering, dynamic variations) to capture invisible micro-patterns.</li>
-        <li class="glow-on-hover"><strong>Hybrid Deep Learning Model:</strong> Implementing a hybrid engineering model that integrates <strong>XGBoost</strong> for spatial feature indoctrination and layers for temporal dependency modeling. Goal: >91.5% prediction accuracy.</li>
-        <li class="glow-on-hover"><strong>Real-Time Modular Framework:</strong> Software supporting real-time data acquisition, AI modeling, and quality engineering.</li>
-        <li class="glow-on-hover"><strong>Hardware Integration:</strong> Analytic abilities with hardware scale (computational efficiency) and Arduino capabilities with hospital datasets to guarantee practical clinical deployment.</li>
-      </ul>
+      <div class="grid-3">
+        <div class="card glow-on-hover">
+            <h3>Global Burden</h3>
+            <p>Cardiovascular diseases are a leading cause of death globally. Early detection is critical.</p>
+        </div>
+        <div class="card glow-on-hover">
+            <h3>Hidden Abnormalities</h3>
+            <p>High-risk changes often manifest as "micro-dynamic" variations not visible to the human eye.</p>
+        </div>
+        <div class="card glow-on-hover">
+            <h3>Clinical Limitations</h3>
+            <p>Standard ECG fails to capture "spatial" indoctrination features required for accurate prediction.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="methods" class="section">
-    <div class="text-box">
+    <div class="text-box" style="max-width: 1200px;">
       <h2>⚙️ Procedures and Methods</h2>
-      <ul>
-        <li class="glow-on-hover"><strong>1. Data Collection:</strong> ECG signals were collected from multiple clinical databases to ensure diverse and unbiased data.</li>
-        <li class="glow-on-hover"><strong>2. Data Preprocessing:</strong> Raw ECG signals are cleaned, filtered, normalized, and segmented into fixed windows.</li>
-        <li class="glow-on-hover"><strong>3. Micro-Dynamics Zoom:</strong> Micro-dynamics analysis reveals tiny heartbeat electrical activity of the heart before processing.</li>
-        <li class="glow-on-hover"><strong>4. AI Model Training:</strong> The model was trained using an 80/20 train-test split. The architecture is a <strong>Stacking Ensemble</strong> optimizing <strong>LightGBM, XGBoost, and Random Forest</strong>.</li>
-        <li class="glow-on-hover"><strong>5. Model Validation:</strong> Evaluated using 20% unseen test data to ensure fairness. Confusion matrix, accuracy, precision, and recall were calculated.</li>
-        <li class="glow-on-hover"><strong>6. Hardware Integration:</strong> The setup uses an ECG sensor connected to an Arduino board to capture real-time heart signals. The device preprocesses the signal and sends it to the mobile app for further AI analysis.</li>
-        <li class="glow-on-hover"><strong>7. Analysis Application:</strong> A dedicated doctor analysis application was developed to review patient ECG uploads remotely with higher accuracy.</li>
-      </ul>
+
+      <div class="methods-top-grid">
+        <div class="method-step">
+            <h3>📂 Data Collection</h3>
+            <p>ECG signals collected from multiple clinical databases to ensure diverse and unbiased data.</p>
+        </div>
+        <div class="method-step">
+            <h3>🧹 Data Preprocessing</h3>
+            <p>Raw ECG signals are cleaned, filtered, normalized, and segmented into fixed windows.</p>
+        </div>
+        <div class="method-step">
+            <h3>🧠 Model Training</h3>
+            <p>Trained on 80/20 split optimizing LightGBM and XGBoost.</p>
+        </div>
+      </div>
+
+      <div class="flowchart-container">
+        <h3 style="text-align:center; color:#00e5ff; margin-bottom:15px;">🔄 System Flow Chart</h3>
+        <div class="flow-steps">
+            <span>Upload ECG File</span> ➝ 
+            <span>Validate Metadata</span> ➝ 
+            <span>Raw Signal Cleaning</span> ➝ 
+            <span>Feature Fusion + Scaling</span> ➝ 
+            <span>Stacking Ensemble</span> ➝ 
+            <span style="border-color:#00e5ff; color:#00e5ff;">Final Report</span>
+        </div>
+      </div>
+
+      <div class="hardware-app-grid">
+        <div class="info-block">
+            <h3>🔌 Hardware Integration</h3>
+            <p>The hardware setup uses an ECG sensor connected to an Arduino board to capture real-time heart signals. The device preprocesses the signal and sends it to the mobile app.</p>
+            <p style="font-size:0.9em; color:#aaa;">(Continuous monitoring suitable for wearable form factor)</p>
+        </div>
+        <div class="info-block">
+            <h3>📱 Analysis Application</h3>
+            <p>A dedicated doctor analysis application was developed to review patient ECG uploads. The app processes the file through the AI model, generating micro-dynamics features and a detailed cardiac risk report.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <section id="results" class="section">
-    <div class="text-box">
+    <div class="text-box" style="width: 95%; max-width: 1300px;">
       <h2>📊 Results and Data Analysis</h2>
       
-      <div style="display:flex; justify-content:space-around; margin: 20px 0;">
-        <div style="text-align:center;">
-          <h1 style="color:#00e5ff; font-size: 2.5em;">91.5%</h1>
+      <div class="stats-row">
+        <div class="stat-item">
+          <h1 class="stat-num">91.5%</h1>
           <p>Accuracy</p>
         </div>
-        <div style="text-align:center;">
-          <h1 style="color:#00e5ff; font-size: 2.5em;">91%</h1>
+        <div class="stat-item">
+          <h1 class="stat-num">91%</h1>
           <p>Sensitivity</p>
         </div>
-        <div style="text-align:center;">
-          <h1 style="color:#00e5ff; font-size: 2.5em;">93%</h1>
+        <div class="stat-item">
+          <h1 class="stat-num">93%</h1>
           <p>Specificity</p>
         </div>
       </div>
 
-      <p class="glow-on-hover">
-        The model achieved a <strong>91.5% accuracy</strong> across eight ECG classes, demonstrating high reliability in multi-class cardiac classification. Micro-dynamic features significantly boosted performance, allowing the system to detect subtle electrical instabilities invisible in standard ECG readings.
-      </p>
-      <p class="glow-on-hover">
-        <strong>Feature Analysis:</strong> Showed that RMS, variance, skewness, kurtosis, and micro-dynamics were the most influential predictors.
-      </p>
-      <p class="glow-on-hover">
-        <strong>Risk Stratification:</strong> The model successfully separated normal and micro-abnormal ECGs, identifying early pre-stroke risk patterns. Analysis revealed clear clustering into low, moderate, and high-risk groups.
+      <p class="glow-on-hover" style="text-align:center;">
+        The model successfully separated normal and micro-abnormal ECGs, identifying early pre-stroke risk patterns.
       </p>
 
       <div class="chart-grid">
-        <div id="chart-accuracy" class="plot-card"></div> <div id="chart-confusion" class="plot-card"></div> <div id="chart-importance" class="plot-card"></div> </div>
-    </div>
-  </section>
-
-  <section id="impact" class="section">
-    <div class="text-box">
-      <h2>🌍 Impact & Conclusion</h2>
-      <p class="glow-on-hover">
-        <strong>Analysis Impact:</strong> This project, with assistance from creative methods based on physiological knowledge, produces a complete and validated early-risk detection capable of processing ECG records and specifically extracting biomarkers.
-      </p>
-      <p class="glow-on-hover">
-        <strong>Final Impact:</strong> This system offers a scalable, rapid, and non-invasive approach which addresses a major clinical gap in early cardiac-risk recognition through binding proactive monitoring and earlier alarms. This supports preventive cardiology and reduces wrong alarms.
-      </p>
+        <div id="chart-accuracy" class="plot-card"></div>
+        <div id="chart-comparison" class="plot-card"></div>
+        <div id="chart-pie" class="plot-card"></div>
+        <div id="chart-roc" class="plot-card"></div>
+      </div>
     </div>
   </section>
 
   <section id="future" class="section">
     <div class="text-box">
       <h2>🚀 Future Work</h2>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-        <div class="glow-on-hover"><strong>01. Data Expansion:</strong> Improve accuracy via ECG data collection across multiple hospital medical centers.</div>
-        <div class="glow-on-hover"><strong>02. Smart Cardiac Vest:</strong> Developing a wearable vest with ECG sensors for cardiac monitoring.</div>
-        <div class="glow-on-hover"><strong>03. Model Refinement:</strong> Adding advanced micro-dynamics and wobble features to estimate coronary artery disease plaque.</div>
-        <div class="glow-on-hover"><strong>04. Mobile App System:</strong> Building a patient app that connects directly to the smart vest for instant analysis.</div>
-        <div class="glow-on-hover"><strong>05. Multi-Signal Integration:</strong> Incorporating additional biological signals (pulse rate, respiration) for advanced AI models.</div>
-        <div class="glow-on-hover"><strong>06. Hospital Network:</strong> Establishing interconnected hospital networks for secure data sharing.</div>
+      <div class="grid-2">
+        <div class="future-item"><strong>01. Data Expansion:</strong> Collect data from multiple hospitals.</div>
+        <div class="future-item"><strong>02. Smart Cardiac Vest:</strong> Wearable vest for 24/7 monitoring.</div>
+        <div class="future-item"><strong>03. Model Refinement:</strong> Advanced micro-dynamics for plaque estimation.</div>
+        <div class="future-item"><strong>04. Mobile App System:</strong> Direct connection to smart vest.</div>
+        <div class="future-item"><strong>05. Multi-Signal Integration:</strong> Pulse rate & respiration integration.</div>
+        <div class="future-item"><strong>06. Hospital Network:</strong> Secure data sharing network.</div>
       </div>
     </div>
   </section>
@@ -165,33 +163,17 @@
     </div>
   </section>
 
-  <section id="references" class="section">
-    <div class="text-box">
-      <h2>📚 Literature Cited</h2>
-      <ul style="font-size: 0.85rem; line-height: 1.6;">
-        <li class="glow-on-hover">1. Zhou, Z., & Wang, J. (2025). A narrative review of multimodal data fusion strategies for precision risk prediction in coronary artery disease. <em>Rambam Maimonides Medical Journal</em>.</li>
-        <li class="glow-on-hover">2. Martinez-Sellés, M., & Marina-Breysse, M. (2023). Current and Future Use of Artificial Intelligence in Electrocardiography. <em>Journal of Cardiovascular Development and Disease</em>.</li>
-        <li class="glow-on-hover">3. Al-Zaiti, S. S., et al. (2020). Machine learning-based prediction of acute coronary syndrome using ECG dispersion and waveform variability. <em>Nature Communications</em>.</li>
-        <li class="glow-on-hover">4. Gopal, S., et al. (2025). From wrist to wearables: Temporal fidelity assessment of the Sydäntek wearable ECG system. <em>Smart Wearable Technology</em>.</li>
-        <li class="glow-on-hover">5. Lehmann, F., & Buschek, D. (2020). Heartbeats in the wild: A field study exploring ECG biometrics in everyday life. <em>Proceedings of the 2020 CHI Conference</em>.</li>
-        <li class="glow-on-hover">6. Rahola, J., et al. (2024). Prognostic significance of beat-to-beat variability of spatial heterogeneity of repolarization. <em>Heart Rhythm</em>.</li>
-        <li class="glow-on-hover">7. Varaganti, S., Manisha, R. L., & Movvala, S. (2024). From waves to diagnoses: Anatomy of the human heart. <em>Springer</em>.</li>
-      </ul>
-    </div>
-  </section>
-
   <section id="contact" class="section">
     <div class="text-box" style="text-align:center;">
-      <h2>📩 Contact</h2>
+      <h2>📩 Contact Team</h2>
       <div class="team-grid">
         <div class="member-card">
-          <div class="photo"><img src="kareem.jpg" alt="Kareem Ismail"></div>
+          <img src="kareem.jpg" alt="Kareem" class="photo">
           <h3>Kareem Ismail</h3>
           <p class="role">AI Engineer</p>
-          <a href="mailto:kareemismail@gmail.com" class="email-link">✉️ kareemismail@gmail.com</a>
         </div>
         <div class="member-card">
-          <div class="photo"><img src="zeyad.jpg" alt="Zeyad Ayman"></div>
+          <img src="zeyad.jpg" alt="Zeyad" class="photo">
           <h3>Zeyad Ayman</h3>
           <p class="role">Data Scientist</p>
         </div>
