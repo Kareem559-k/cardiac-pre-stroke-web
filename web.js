@@ -10,8 +10,19 @@ function reveal() {
 window.addEventListener('scroll', reveal);
 reveal();
 
-// --- Charts Configuration (PLOTLY) ---
+// --- Back to Top Button ---
+const btn = document.createElement('button');
+btn.innerText = '⬆';
+Object.assign(btn.style, {
+  position:'fixed', right:'20px', bottom:'20px', width:'50px', height:'50px',
+  borderRadius:'50%', border:'none', background:'#00e5ff', color:'#000',
+  fontSize:'20px', cursor:'pointer', display:'none', zIndex:1000
+});
+document.body.appendChild(btn);
+window.addEventListener('scroll', ()=> btn.style.display = window.scrollY > 300 ? 'block' : 'none');
+btn.onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
 
+// --- Charts Configuration (PLOTLY) ---
 const commonLayout = {
   paper_bgcolor: 'rgba(0,0,0,0)',
   plot_bgcolor: 'rgba(255,255,255,0.03)',
@@ -19,7 +30,7 @@ const commonLayout = {
   margin: { t: 40, b: 40, l: 40, r: 20 }
 };
 
-// 1. Accuracy Curve
+// 1. Accuracy Curve (Reaching 91.5%)
 Plotly.newPlot('chart-accuracy', [{
   x: [500, 1000, 5000, 10000, 20000],
   y: [72, 79, 85, 89, 91.5],
@@ -33,7 +44,7 @@ Plotly.newPlot('chart-accuracy', [{
   yaxis: { title: 'Accuracy (%)', range: [70, 95] }
 }, {responsive: true});
 
-// 2. Model Comparison (Bar Chart)
+// 2. Model Comparison (Stacking is Best)
 Plotly.newPlot('chart-comparison', [{
   x: ['LightGBM', 'XGBoost', 'Random Forest', 'Stacking (Ours)'],
   y: [87, 89, 85, 91.5],
@@ -45,7 +56,7 @@ Plotly.newPlot('chart-comparison', [{
   yaxis: { range: [80, 95] }
 }, {responsive: true});
 
-// 3. Feature Importance (Pie Chart)
+// 3. Feature Importance (Micro-Dynamics Focus)
 Plotly.newPlot('chart-pie', [{
   labels: ['Micro-Dynamics', 'RMS', 'Variance', 'Skewness', 'Kurtosis'],
   values: [35, 20, 15, 15, 15],
@@ -57,7 +68,7 @@ Plotly.newPlot('chart-pie', [{
   title: 'Feature Importance'
 }, {responsive: true});
 
-// 4. ROC Curve
+// 4. ROC Curve (High AUC)
 Plotly.newPlot('chart-roc', [{
   x: [0, 0.1, 0.2, 0.5, 0.8, 1],
   y: [0, 0.85, 0.91, 0.95, 0.98, 1],
